@@ -2,11 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TexasLottoComponent } from './texas-lotto.component';
 import { TexasLottoService } from '../texas-lotto.service';
+import { of } from 'rxjs';
 
 describe('TexasLottoComponent', () => {
   let component: TexasLottoComponent;
   let fixture: ComponentFixture<TexasLottoComponent>;
-  let mockTexasLottoService: TexasLottoService;
+  let service: TexasLottoService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,6 +17,7 @@ describe('TexasLottoComponent', () => {
   }));
 
   beforeEach(() => {
+    service = TestBed.get(TexasLottoService);
     fixture = TestBed.createComponent(TexasLottoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -34,15 +36,30 @@ describe('TexasLottoComponent', () => {
     expect(titleText.textContent).toEqual('Texas Lotto');
   });
 
-  it('should invoke generateTexasLottoNumbers()', () => {
-    expect(component.generateTexasLottoNumbers).toHaveBeenCalledTimes(1);
+  fit('should display lotto numbers', () => {
+    const numbers = fixture.nativeElement.querySelectorAll('li');
+    let count = 0;
+
+    expect(numbers.length).toEqual(6);
+    numbers.forEach(lottoNumber => {
+      expect(lottoNumber.textContent).toEqual((++count).toString());
+    });
   });
 
-  xit('should get a number array from generateTexasLottoNumbers()', () => {
-    // mockTexasLottoService.generate.and.returnValue(null);
-    
-    fixture.detectChanges();
-
-    expect(component.lottoNumbers).toEqual([1,2,3,4,5,6]);
+  xit('should call texas lotto service', () => {
+    const serviceSpy = spyOn(service, 'generate').and.callThrough();
+    component.generateTexasLottoNumbers();
+    expect(serviceSpy).toHaveBeenCalledTimes(10);
   });
+
+  xit('should retrieve lotto numbers', () => {
+
+  });
+
+  // it('should get a number array from generateTexasLottoNumbers()', () => {
+
+
+  //   service.generate().sub
+  //   expect(component.lottoNumbers).toEqual([1,2,3,4,5,6]);
+  // });
 });

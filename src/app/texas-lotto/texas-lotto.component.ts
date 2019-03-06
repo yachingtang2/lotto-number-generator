@@ -13,13 +13,12 @@ export class TexasLottoComponent implements OnInit {
   constructor(private texasLottoService: TexasLottoService) { }
 
   ngOnInit() {
-    console.log('YCT - one');
     this.generateTexasLottoNumbers();
-    console.log('YCT - two');
   }
 
   generateTexasLottoNumbers(): void {
-    console.log('YCT - here');
-    this.lottoNumbers = [1,2,3,4,5,6];
+    this.texasLottoService.generate().subscribe(numbers => {
+      this.lottoNumbers = numbers;
+    });
   }
 }
