@@ -28,5 +28,5 @@ describe('TexasLottoService', () => {
       expect(numbers[4]).toEqual(5);
       expect(numbers[5]).toEqual(6);
     });
-  })
+  });
 });

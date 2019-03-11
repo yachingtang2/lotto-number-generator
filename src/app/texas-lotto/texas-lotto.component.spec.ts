@@ -83,7 +83,7 @@ describe('TexasLottoComponent', () => {
 
     beforeEach(() => {
       expectedTexasLottoNumbers = [5,10,15,25,30,35];
-      serviceSpy = spyOn(service, "generate").and.returnValue(
+      serviceSpy = spyOn(service, 'generate').and.returnValue(
         of(expectedTexasLottoNumbers)
       );
       component.lottoNumbers = expectedTexasLottoNumbers;
