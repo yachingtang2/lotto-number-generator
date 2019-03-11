@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { TexasLottoService } from './texas-lotto.service';
 import { of } from 'rxjs';
 
-fdescribe('TexasLottoService', () => {
+describe('TexasLottoService', () => {
   let service: TexasLottoService;
 
   beforeEach(() => TestBed.configureTestingModule({
@@ -18,7 +18,7 @@ fdescribe('TexasLottoService', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('should generate Texas Lotto numbers', () => {
+  it('should generate Texas Lotto numbers', () => {
     service.generate().subscribe(numbers => {
       expect(numbers.length).toEqual(6);
       expect(numbers[0]).toEqual(1);
