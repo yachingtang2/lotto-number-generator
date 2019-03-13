@@ -4,11 +4,11 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class TwoStepService {
+export class TwoStepLottoService {
 
   constructor() { }
 
   generate(): Observable<number[]> {
-    return of([5,15,25,35,45]);
+    return of([1,2,3,4,5]);
   }
 }
