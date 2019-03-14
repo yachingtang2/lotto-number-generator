@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
 import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lotto.component';
+import { TwoStepLottoComponent } from './two-step-lotto/two-step-lotto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TexasLottoComponent,
-    MegaMillionLottoComponent
+    MegaMillionLottoComponent,
+    TwoStepLottoComponent
   ],
   imports: [
     BrowserModule,
