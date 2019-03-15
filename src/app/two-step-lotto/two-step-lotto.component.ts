@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TwoStepLottoService } from '../two-step-lotto.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-two-step-lotto',
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class TwoStepLottoComponent implements OnInit {
   title = 'Two Step Lotto Numbers';
-  twoStepLottoNumbers: number[];
+  twoStepLottoNumbers = null;
 
   constructor(private twoStepLottoService: TwoStepLottoService) { }
 
@@ -18,9 +17,8 @@ export class TwoStepLottoComponent implements OnInit {
   }
 
   generateTwoStepLottoNumbers(): void {
-    this.twoStepLottoService.generate().subscribe(numbers => {
-      this.twoStepLottoNumbers = numbers;
-    });
+    this.twoStepLottoService.generate().subscribe(numbers => this.twoStepLottoNumbers = numbers);
   }
 
+  
 }
