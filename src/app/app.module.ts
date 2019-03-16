@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
 import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lotto.component';
 import { TwoStepLottoComponent } from './two-step-lotto/two-step-lotto.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TexasLottoComponent,
     MegaMillionLottoComponent,
-    TwoStepLottoComponent
+    TwoStepLottoComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
