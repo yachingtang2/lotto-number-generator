@@ -2,9 +2,10 @@ import { AppComponent } from './app.component';
 import { routes } from './app-routing.module';
 import { Router } from "@angular/router";
 import { ComponentFixture, fakeAsync, tick, TestBed } from "@angular/core/testing";
-import { Location } from '@angular/common';
+import { Location, CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppModule } from './app.module';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
 
 describe('Router Test', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -13,9 +14,14 @@ describe('Router Test', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      declarations: [
+        AppComponent,
+        TexasLottoComponent,
+        WelcomeComponent
+      ],
       imports: [
         RouterTestingModule.withRoutes(routes),
-        AppModule
+        CommonModule
       ]
     });
     router = TestBed.get(Router);
@@ -32,9 +38,10 @@ describe('Router Test', () => {
 
   it('should navigate to Home page', fakeAsync(() => {
     fixture.ngZone.run(() => {
-      router.navigate(['']).then(() => {
+      router.navigate(['welcome']).then(() => {
         expect(location.path()).toBe('/welcome');
       });
+      tick();
     });
   }));
 
