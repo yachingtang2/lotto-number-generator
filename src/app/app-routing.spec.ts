@@ -1,6 +1,5 @@
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
-import { Component } from "@angular/compiler/src/core";
 import { Router } from "@angular/router";
 import { Location } from "@angular/common";
 import { WelcomeComponent } from "./welcome/welcome.component";
