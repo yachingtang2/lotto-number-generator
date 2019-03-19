@@ -7,6 +7,7 @@ import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
 import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lotto.component';
 import { TwoStepLottoComponent } from './two-step-lotto/two-step-lotto.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LottoOptionsComponent } from './lotto-options/lotto-options.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     TexasLottoComponent,
     MegaMillionLottoComponent,
     TwoStepLottoComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LottoOptionsComponent
   ],
   imports: [
     BrowserModule,
