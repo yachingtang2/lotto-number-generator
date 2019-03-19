@@ -1,25 +1,27 @@
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
 import { Router } from "@angular/router";
-import { Location } from "@angular/common";
-import { WelcomeComponent } from "./welcome/welcome.component";
 import { RouterTestingModule } from "@angular/router/testing";
 import { routes } from "./app-routing.module";
+import { Location } from "@angular/common";
+import { WelcomeComponent } from "./welcome/welcome.component";
 import { TexasLottoComponent } from "./texas-lotto/texas-lotto.component";
+import { MegaMillionLottoComponent } from "./mega-million-lotto/mega-million-lotto.component";
+import { TwoStepLottoComponent } from "./two-step-lotto/two-step-lotto.component";
 
-describe('Router test', () => {
+fdescribe("Router test", () => {
   let fixture: ComponentFixture<AppComponent>;
   let router: Router;
   let location: Location;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule.withRoutes(routes)
-      ],
+      imports: [RouterTestingModule.withRoutes(routes)],
       declarations: [
         AppComponent,
+        MegaMillionLottoComponent,
         TexasLottoComponent,
+        TwoStepLottoComponent,
         WelcomeComponent
       ]
     });
@@ -29,22 +31,44 @@ describe('Router test', () => {
     fixture.ngZone.run(() => router.initialNavigation());
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(true).toBeTruthy();
   });
 
-  it('should navigate to Welcome page', () => {
-    fixture.ngZone.run(() => router.navigate(['welcome'])
-      .then(() => expect(location.path()).toBe('/welcome')));
+  it("should navigate to Welcome page", () => {
+    fixture.ngZone.run(() =>
+      router
+        .navigate(["welcome"])
+        .then(() => expect(location.path()).toEqual("/welcome"))
+    );
   });
 
-  it('should navigate to Texas Lotto page', () => {
-    fixture.ngZone.run(() => router.navigate(['texas-lotto'])
-      .then(() => expect(location.path()).toBe('/texas-lotto')));
+  it("should navigate to Texas Lotto page", () => {
+    fixture.ngZone.run(() =>
+      router
+        .navigate(["texas-lotto"])
+        .then(() => expect(location.path()).toEqual("/texas-lotto"))
+    );
   });
 
-  it('should navigate to default page - Welcome page', () => {
+  it("should navigate to Mega Million page", () => {
+    fixture.ngZone.run(() =>
+      router
+        .navigate(["mega-million"])
+        .then(() => expect(location.path()).toEqual("/mega-million"))
+    );
+  });
+
+  it("should navigate to Two Steps page", () => {
+    fixture.ngZone.run(() =>
+      router
+        .navigate(["two-steps"])
+        .then(() => expect(location.path()).toEqual("/two-steps"))
+    );
+  });
+
+  it('should navigate to Default page', () => {
     fixture.ngZone.run(() => router.navigate([''])
-      .then(() => expect(location.path()).toBe('/welcome')));
-  });
+      .then(() => expect(location.path()).toEqual('/welcome')));
+  })
 });
