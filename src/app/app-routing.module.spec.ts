@@ -7,7 +7,7 @@ import { routes } from "./app.routing.module";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { TexasLottoComponent } from "./texas-lotto/texas-lotto.component";
 import { MegaMillionLottoComponent } from "./mega-million-lotto/mega-million-lotto.component";
-import { TwoStepLottoComponent } from "./two-step-lotto/two-step-lotto.component";
+import { TwoStepsLottoComponent } from "./two-steps-lotto/two-steps-lotto.component";
 
 describe('Router test', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -17,7 +17,7 @@ describe('Router test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule.withRoutes(routes) ],
-      declarations: [ AppComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepLottoComponent, WelcomeComponent ]
+      declarations: [ AppComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepsLottoComponent, WelcomeComponent ]
     });
     fixture = TestBed.createComponent(AppComponent);
     router = TestBed.get(Router);

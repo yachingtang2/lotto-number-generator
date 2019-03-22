@@ -3,7 +3,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { NgModule } from "@angular/core";
 import { TexasLottoComponent } from "./texas-lotto/texas-lotto.component";
 import { MegaMillionLottoComponent } from "./mega-million-lotto/mega-million-lotto.component";
-import { TwoStepLottoComponent } from "./two-step-lotto/two-step-lotto.component";
+import { TwoStepsLottoComponent } from "./two-steps-lotto/two-steps-lotto.component";
 
 export const routes: Routes = [
   {
@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'two-steps',
-    component: TwoStepLottoComponent
+    component: TwoStepsLottoComponent
   },
   {
     path: '',

@@ -8,7 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { routes } from '../app.routing.module';
 import { WelcomeComponent } from '../welcome/welcome.component';
 import { MegaMillionLottoComponent } from '../mega-million-lotto/mega-million-lotto.component';
-import { TwoStepLottoComponent } from '../two-step-lotto/two-step-lotto.component';
+import { TwoStepsLottoComponent } from '../two-steps-lotto/two-steps-lotto.component';
 
 describe('LottoOptionsComponent', () => {
   let component: LottoOptionsComponent;
@@ -16,7 +16,7 @@ describe('LottoOptionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LottoOptionsComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepLottoComponent, WelcomeComponent ],
+      declarations: [ LottoOptionsComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepsLottoComponent, WelcomeComponent ],
       imports: [ RouterTestingModule.withRoutes(routes) ]
     })
     .compileComponents();
