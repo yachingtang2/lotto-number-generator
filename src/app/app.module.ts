@@ -8,6 +8,7 @@ import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lot
 import { TwoStepLottoComponent } from './two-step-lotto/two-step-lotto.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LottoOptionsComponent } from './lotto-options/lotto-options.component';
+import { TwoStepsLottoComponent } from './two-steps-lotto/two-steps-lotto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LottoOptionsComponent } from './lotto-options/lotto-options.component';
     MegaMillionLottoComponent,
     TwoStepLottoComponent,
     WelcomeComponent,
-    LottoOptionsComponent
+    LottoOptionsComponent,
+    TwoStepsLottoComponent
   ],
   imports: [
     BrowserModule,
