@@ -8,6 +8,7 @@ import { TwoStepsLottoComponent } from './two-steps-lotto/two-steps-lotto.compon
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LottoOptionsComponent } from './lotto-options/lotto-options.component';
 import { AppRoutingModule } from './app.routing.module';
+import { TwoStepsComponent } from './two-steps/two-steps.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app.routing.module';
     TwoStepsLottoComponent,
     WelcomeComponent,
     LottoOptionsComponent,
-    TwoStepsLottoComponent
+    TwoStepsLottoComponent,
+    TwoStepsComponent
   ],
   imports: [
     BrowserModule,
