@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { VerificationService } from './verification.service';
 
-fdescribe('VerificationService', () => {
+describe('VerificationService', () => {
   let  service: VerificationService;
 
   beforeEach(() => {
@@ -15,10 +15,12 @@ fdescribe('VerificationService', () => {
   });
 
   it('should verify user admin/admin is a valid user', () => {
-    expect(service.verifyUser('admin', 'admin')).toBeTruthy();
+    service.verifyUser('admin', 'admin');
+    expect(service.isVerified()).toBeTruthy();
   });
 
   it('should verify user abc/abc is an invalid user', () => {
-    expect(service.verifyUser('abc', 'abc')).toBeFalsy();
+    service.verifyUser('abc', 'abc');
+    expect(service.isVerified()).toBeFalsy();
   });
 });

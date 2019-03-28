@@ -4,13 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VerificationService {
+  isVerifiedUser: boolean;
+
   constructor() { }
 
-  verifyUser(userId: string, password: string): boolean {
-    return this.isVerified(userId, password);
+  verifyUser(userId: string, password: string) {
+    this.isVerifiedUser = (userId === 'admin' && password === 'admin');
   }
 
-  isVerified(userId: string, password: string): boolean {
-    return userId === 'admin' && password === 'admin';
+  isVerified() {
+    return this.isVerifiedUser;
   }
 }
