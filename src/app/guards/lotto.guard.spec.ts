@@ -1,11 +1,10 @@
-import { CanActivate, Router } from '@angular/router';
-import { TestBed, async, inject } from '@angular/core/testing';
+import { LottoGuard } from "./lotto.guard";
+import { inject, TestBed } from "@angular/core/testing";
+import { VerificationService } from "../verification.service";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
 
-import { LottoGuard } from './lotto.guard';
-import { VerificationService } from '../verification.service';
-import { RouterTestingModule } from '@angular/router/testing';
-
-describe('LottoGuard', () => {
+describe('Lotto guard', () => {
   let lottoGuard: LottoGuard;
   let service: VerificationService;
   let router: Router;
@@ -14,10 +13,9 @@ describe('LottoGuard', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [LottoGuard],
+      providers: [ LottoGuard ],
       imports: [ RouterTestingModule ]
     });
-
     lottoGuard = TestBed.get(LottoGuard);
     service = TestBed.get(VerificationService);
     router = TestBed.get(Router);
@@ -27,17 +25,20 @@ describe('LottoGuard', () => {
     expect(guard).toBeTruthy();
   }));
 
-  it('should fail when invalid user', () => {
+  it('should fail for invalid user', () => {
+    routerSpy = spyOn(router, 'navigate').and.returnValue(['/welcome']);
     serviceSpy = spyOn(service, 'isVerified').and.returnValue(false);
-    routerSpy = spyOn(router, 'navigate').and.returnValue('/welcome');
     expect(lottoGuard.canActivate(null, null)).toBeFalsy();
+    expect(serviceSpy).toHaveBeenCalledTimes(1);
+    expect(router.navigate).toHaveBeenCalledTimes(1);
     expect(router.navigate).toHaveBeenCalledWith(['/welcome']);
   });
 
-  it('should succeed when valid user', () => {
-    serviceSpy = spyOn(service, 'isVerified').and.returnValue(true);
+  it('should activate for valud user', () => {
     routerSpy = spyOn(router, 'navigate').and.callThrough();
+    serviceSpy = spyOn(service, 'isVerified').and.returnValue(true);
     expect(lottoGuard.canActivate(null, null)).toBeTruthy();
-    expect(routerSpy).toHaveBeenCalledTimes(0);
+    expect(serviceSpy).toHaveBeenCalledTimes(1);
+    expect(router.navigate).toHaveBeenCalledTimes(0);
   });
 });
