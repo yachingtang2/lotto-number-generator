@@ -1,5 +1,5 @@
-import { TwoStepLottoService } from './../two-step-lotto.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { TwoStepLottoService } from "../two-step-lotto.service";
 
 @Component({
   selector: 'app-two-steps-lotto',
@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./two-steps-lotto.component.scss']
 })
 export class TwoStepsLottoComponent implements OnInit {
-  title = 'Two Steps Lotto numbers';
-  twoStepsLottoNumbers: number[];
-  
-  constructor(private service: TwoStepLottoService) { }
 
-  ngOnInit() {
+  title = 'Two Steps Lotto Numbers';
+  twoStepsLottoNumbers: number[];
+
+  constructor(private service: TwoStepLottoService) {}
+
+  ngOnInit(): void {
     this.generateTwoStepsLottoNumbers();
   }
 
