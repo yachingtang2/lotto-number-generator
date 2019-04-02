@@ -8,6 +8,7 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { TexasLottoComponent } from "./texas-lotto/texas-lotto.component";
 import { MegaMillionLottoComponent } from "./mega-million-lotto/mega-million-lotto.component";
 import { TwoStepsLottoComponent } from "./two-steps-lotto/two-steps-lotto.component";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 describe('Router test', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -17,7 +18,8 @@ describe('Router test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule.withRoutes(routes) ],
-      declarations: [ AppComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepsLottoComponent, WelcomeComponent ]
+      declarations: [ AppComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepsLottoComponent, WelcomeComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     });
     fixture = TestBed.createComponent(AppComponent);
     router = TestBed.get(Router);
