@@ -4,7 +4,7 @@ import { TwoStepsLottoComponent } from './two-steps-lotto.component';
 import { of, Subject, Observable } from 'rxjs';
 
 describe('Two Steps lotto component', () => {
-  const expectedNumbers = [1,2,3,4,5];
+  const expectedNumbers = [1, 2, 3, 4, 5];
 
   class TwoStepLottoServiceStub {
     constructor(private result: Observable<number[]>) {
@@ -62,7 +62,7 @@ describe('Two Steps lotto component', () => {
     let serviceSpy;
 
     it('should call service.generate()', () => {
-      serviceSpy = spyOn(service, 'generate').and.returnValue(of([1,2,3,4,5]));
+      serviceSpy = spyOn(service, 'generate').and.returnValue(of([1, 2, 3, 4, 5]));
       component.generateTwoStepsLottoNumbers();
       expect(serviceSpy).toHaveBeenCalledTimes(1);
     });
@@ -88,14 +88,14 @@ describe('Two Steps lotto component', () => {
     });
 
     it('should display numbers', () => {
-      component.twoStepsLottoNumbers = [1,2,3,4,5];
+      component.twoStepsLottoNumbers = [1, 2, 3, 4, 5];
       fixture.detectChanges();
       const numbers = fixture.nativeElement.querySelectorAll('li');
       expect(numbers.length).toEqual(5);
       let value = 0;
       numbers.forEach(number => {
         expect(number.textContent).toEqual((++value).toString());
-      })
+      });
     });
   });
 });

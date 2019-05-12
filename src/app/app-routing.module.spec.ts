@@ -1,14 +1,14 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { AppComponent } from "./app.component";
-import { Router } from "@angular/router";
-import { Location } from "@angular/common";
-import { RouterTestingModule } from "@angular/router/testing";
-import { routes } from "./app.routing.module";
-import { WelcomeComponent } from "./welcome/welcome.component";
-import { TexasLottoComponent } from "./texas-lotto/texas-lotto.component";
-import { MegaMillionLottoComponent } from "./mega-million-lotto/mega-million-lotto.component";
-import { TwoStepsLottoComponent } from "./two-steps-lotto/two-steps-lotto.component";
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from './app.routing.module';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
+import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lotto.component';
+import { TwoStepsLottoComponent } from './two-steps-lotto/two-steps-lotto.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('Router test', () => {
   let fixture: ComponentFixture<AppComponent>;

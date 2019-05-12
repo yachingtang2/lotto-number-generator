@@ -10,7 +10,7 @@ export class LottoGuard implements CanActivate {
   constructor(private service: VerificationService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    if(this.service.isVerified()) {
+    if (this.service.isVerified()) {
       return true;
     } else {
       this.router.navigate(['/welcome']);

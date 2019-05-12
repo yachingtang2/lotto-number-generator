@@ -4,7 +4,7 @@ import { MegaMillionLottoComponent } from './mega-million-lotto.component';
 import { MegaMillionLottoService } from '../mega-million-lotto.service';
 import { of, Subject, Observable } from 'rxjs';
 
-const expectedMegaMillionLottoNumbers = [2,12,22,32,42,52];
+const expectedMegaMillionLottoNumbers = [2, 12, 22, 32, 42, 52];
 
 describe('MegaMillionLottoComponent', () => {
   let component: MegaMillionLottoComponent;
@@ -70,7 +70,7 @@ describe('MegaMillionLottoComponent', () => {
       expect(li.length).toEqual(6);
 
       li.forEach(number =>
-        expect(number.textContent).toEqual((count++*10+2).toString()));
+        expect(number.textContent).toEqual((count++ * 10 + 2).toString()));
     });
   });
 

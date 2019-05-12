@@ -9,6 +9,6 @@ export class TexasLottoService {
   constructor() { }
 
   generate(): Observable<number[]> {
-    return of([1,2,3,4,5,6]);
+    return of([1, 2, 3, 4, 5, 6]);
   }
 }

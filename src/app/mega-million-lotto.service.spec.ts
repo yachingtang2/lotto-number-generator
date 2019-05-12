@@ -14,7 +14,7 @@ describe('MegaMillionLottoService', () => {
   it('should return Mega Million Lotto numbers', () => {
     const service: MegaMillionLottoService = TestBed.get(MegaMillionLottoService);
     service.generate().subscribe(numbers => {
-      expect(numbers).toEqual([2,12,22,32,42,52]);
+      expect(numbers).toEqual([2, 12, 22, 32, 42, 52]);
     });
   });
 });

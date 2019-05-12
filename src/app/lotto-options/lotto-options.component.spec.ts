@@ -1,13 +1,13 @@
-import { LottoOptionsComponent } from "./lotto-options.component";
-import { TestBed, ComponentFixture, async } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
-import { RouterLinkWithHref } from "@angular/router";
-import { RouterTestingModule } from "@angular/router/testing";
-import { routes } from "../app.routing.module";
-import { WelcomeComponent } from "../welcome/welcome.component";
-import { TexasLottoComponent } from "../texas-lotto/texas-lotto.component";
-import { MegaMillionLottoComponent } from "../mega-million-lotto/mega-million-lotto.component";
-import { TwoStepsLottoComponent } from "../two-steps-lotto/two-steps-lotto.component";
+import { LottoOptionsComponent } from './lotto-options.component';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { RouterLinkWithHref } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { routes } from '../app.routing.module';
+import { WelcomeComponent } from '../welcome/welcome.component';
+import { TexasLottoComponent } from '../texas-lotto/texas-lotto.component';
+import { MegaMillionLottoComponent } from '../mega-million-lotto/mega-million-lotto.component';
+import { TwoStepsLottoComponent } from '../two-steps-lotto/two-steps-lotto.component';
 
 describe('Lotto Options', () => {
   let fixture: ComponentFixture<LottoOptionsComponent>;

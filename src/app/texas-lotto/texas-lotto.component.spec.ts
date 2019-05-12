@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TexasLottoComponent } from './texas-lotto.component';
 import { TexasLottoService } from '../texas-lotto.service';
-import { Observable, Subject, of } from "rxjs";
+import { Observable, Subject, of } from 'rxjs';
 
 describe('TexasLottoComponent', () => {
   let component: TexasLottoComponent;
@@ -46,16 +46,16 @@ describe('TexasLottoComponent', () => {
   });
 
   it('should have title - "Texas Lotto"', () => {
-    expect(component.title).toEqual("Texas Lotto");
+    expect(component.title).toEqual('Texas Lotto');
   });
 
   it('should display title - "Texas Lotto"', () => {
-    const titleText = fixture.nativeElement.querySelector("h1");
-    expect(titleText.textContent).toEqual("Texas Lotto");
+    const titleText = fixture.nativeElement.querySelector('h1');
+    expect(titleText.textContent).toEqual('Texas Lotto');
   });
 
   it('should display lotto numbers', () => {
-    const numbers = fixture.nativeElement.querySelectorAll("li");
+    const numbers = fixture.nativeElement.querySelectorAll('li');
     let count = 0;
 
     expect(numbers.length).toEqual(6);
@@ -65,7 +65,7 @@ describe('TexasLottoComponent', () => {
   });
 
   describe('Texas Lotto service', () => {
-    let expectedTexasLottoNumbers = [10, 20, 30, 40, 50, 60];
+    const expectedTexasLottoNumbers = [10, 20, 30, 40, 50, 60];
 
     it('should have texas lotto service', () => {
       expect(service).toBeTruthy();
@@ -82,7 +82,7 @@ describe('TexasLottoComponent', () => {
     let serviceSpy;
 
     beforeEach(() => {
-      expectedTexasLottoNumbers = [5,10,15,25,30,35];
+      expectedTexasLottoNumbers = [5, 10, 15, 25, 30, 35];
       serviceSpy = spyOn(service, 'generate').and.returnValue(
         of(expectedTexasLottoNumbers)
       );

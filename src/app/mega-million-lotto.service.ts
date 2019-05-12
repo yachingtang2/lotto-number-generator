@@ -9,6 +9,6 @@ export class MegaMillionLottoService {
   constructor() { }
 
   generate(): Observable<number[]> {
-    return of([2,12,22,32,42,52]);
+    return of([2, 12, 22, 32, 42, 52]);
   }
 }

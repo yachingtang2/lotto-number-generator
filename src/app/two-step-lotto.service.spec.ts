@@ -18,6 +18,6 @@ describe('TwoStepLottoService', () => {
   });
 
   it('should return two step lotto numbers', () => {
-    service.generate().subscribe(numbers => expect(numbers).toEqual([1,2,3,4,5]));
+    service.generate().subscribe(numbers => expect(numbers).toEqual([1, 2, 3, 4, 5]));
   });
 });
