@@ -31,7 +31,7 @@ describe('Lotto guard', () => {
     expect(lottoGuard.canActivate(null, null)).toBeFalsy();
     expect(serviceSpy).toHaveBeenCalledTimes(1);
     expect(router.navigate).toHaveBeenCalledTimes(1);
-    expect(router.navigate).toHaveBeenCalledWith(['/welcome']);
+    expect(router.navigate).toHaveBeenCalledWith(['welcome']);
   });
 
   it('should activate for valud user', () => {

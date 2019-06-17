@@ -13,7 +13,7 @@ export class LottoGuard implements CanActivate {
     if (this.service.isVerified()) {
       return true;
     } else {
-      this.router.navigate(['/welcome']);
+      this.router.navigate(['welcome']);
       return false;
     }
   }
