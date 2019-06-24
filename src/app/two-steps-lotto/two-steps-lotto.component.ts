@@ -9,7 +9,7 @@ import { TwoStepLottoService } from '../two-step-lotto.service';
 export class TwoStepsLottoComponent implements OnInit {
 
   title = 'Two Steps Lotto Numbers';
-  twoStepsLottoNumbers: number[];
+  lottoNumbers: number[];
 
   constructor(private service: TwoStepLottoService) {}
 
@@ -18,6 +18,6 @@ export class TwoStepsLottoComponent implements OnInit {
   }
 
   generateTwoStepsLottoNumbers(): void {
-    this.service.generate().subscribe(numbers => this.twoStepsLottoNumbers = numbers);
+    this.service.generate().subscribe(numbers => this.lottoNumbers = numbers);
   }
 }

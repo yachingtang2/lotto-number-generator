@@ -1,6 +1,7 @@
-<div>
+<!-- <div>
   <h1>{{title}}</h1>
   <ul *ngIf="twoStepsLottoNumbers">
     <li *ngFor="let number of twoStepsLottoNumbers">{{number}}</li>
   </ul>
-</div>
+</div> -->
+<app-lotto-number-display [title]="title" [lottoNumbers]="lottoNumbers"></app-lotto-number-display>

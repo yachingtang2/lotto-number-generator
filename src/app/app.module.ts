@@ -17,6 +17,7 @@ import { LottoNumberParentComponent } from './lotto-number-parent/lotto-number-p
     MegaMillionLottoComponent,
     TexasLottoComponent,
     WelcomeComponent,
+    LottoNumberDisplayComponent,
     LottoOptionsComponent,
     TwoStepsLottoComponent
   ],

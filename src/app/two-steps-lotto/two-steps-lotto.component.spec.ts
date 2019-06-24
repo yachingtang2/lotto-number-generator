@@ -1,3 +1,4 @@
+import { LottoNumberDisplayComponent } from './../lotto-number-display/lotto-number-display.component';
 import { TwoStepLottoService } from './../two-step-lotto.service';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { TwoStepsLottoComponent } from './two-steps-lotto.component';
@@ -27,7 +28,10 @@ describe('Two Steps lotto component', () => {
     serviceStub = new TwoStepLottoServiceStub(subject);
 
     TestBed.configureTestingModule({
-      declarations: [ TwoStepsLottoComponent ],
+      declarations: [
+        LottoNumberDisplayComponent,
+        TwoStepsLottoComponent
+      ],
       providers: [
         { provide: TwoStepLottoService, useValue: serviceStub }
       ]
@@ -55,7 +59,7 @@ describe('Two Steps lotto component', () => {
   });
 
   it('should have twoStepsLottoNumbers', () => {
-    expect(component.twoStepsLottoNumbers).toBe(undefined);
+    expect(component.lottoNumbers).toBe(undefined);
   });
 
   describe('TwoStepLottoService', () => {
@@ -71,31 +75,39 @@ describe('Two Steps lotto component', () => {
   describe('twoStepsLottoNumbers', () => {
     it('should generate twoStepsLottoNumbers', () => {
       subject.next(expectedNumbers);
-      expect(component.twoStepsLottoNumbers).toEqual(expectedNumbers);
+      expect(component.lottoNumbers).toEqual(expectedNumbers);
     });
   });
 
-  describe('HTML element', () => {
-    it('should display title', () => {
-      const element = fixture.nativeElement.querySelector('h1');
-      expect(element.textContent).toEqual('Two Steps Lotto Numbers');
-    });
+  // describe('HTML element', () => {
+  //   it('should display title', () => {
+  //     const element = fixture.nativeElement.querySelector('h1');
+  //     expect(element.textContent).toEqual('Two Steps Lotto Numbers');
+  //   });
 
-    it('should not display number when no number', () => {
-      const element = fixture.nativeElement.querySelector('ul');
-      expect(element).toBe(null);
-      expect(component.twoStepsLottoNumbers).toBe(undefined);
-    });
+  //   it('should not display number when no number', () => {
+  //     const element = fixture.nativeElement.querySelector('ul');
+  //     expect(element).toBe(null);
+  //     expect(component.twoStepsLottoNumbers).toBe(undefined);
+  //   });
 
-    it('should display numbers', () => {
-      component.twoStepsLottoNumbers = [1, 2, 3, 4, 5];
-      fixture.detectChanges();
-      const numbers = fixture.nativeElement.querySelectorAll('li');
-      expect(numbers.length).toEqual(5);
-      let value = 0;
-      numbers.forEach(number => {
-        expect(number.textContent).toEqual((++value).toString());
-      });
+  //   it('should display numbers', () => {
+  //     component.twoStepsLottoNumbers = [1, 2, 3, 4, 5];
+  //     fixture.detectChanges();
+  //     const numbers = fixture.nativeElement.querySelectorAll('li');
+  //     expect(numbers.length).toEqual(5);
+  //     let value = 0;
+  //     numbers.forEach(number => {
+  //       expect(number.textContent).toEqual((++value).toString());
+  //     });
+  //   });
+  // });
+
+  describe('Lotto Number Display child component', () => {
+
+    it('should have lotto-number-display', () => {
+      const element = fixture.nativeElement.querySelector('app-lotto-number-display');
+      expect(element).toBeTruthy();
     });
   });
 });
