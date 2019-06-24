@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-lotto-number-display',
@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class LottoNumberDisplayComponent implements OnInit {
   @Input() title: any;
   @Input() lottoNumbers: number[];
+  @Output() regenerate = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.regenerate.emit(true);
+  }
 }

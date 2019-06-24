@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LottoNumberDisplayComponent } from './lotto-number-display.component';
+import { Button } from 'selenium-webdriver';
 
 describe('LottoNumberDisplayComponent', () => {
   let component: LottoNumberDisplayComponent;
@@ -40,6 +41,11 @@ describe('LottoNumberDisplayComponent', () => {
     expect(element.textContent).toEqual('title');
   });
 
+  it('should display Regenerate numbers button', () => {
+    const element = fixture.nativeElement.querySelector('button');
+    expect(element.textContent).toEqual('Regenerate numbers');
+  });
+
   it('should display lotto numbers', () => {
     component.lottoNumbers = [ 5, 6, 7, 8, 9 , 10 ];
     fixture.detectChanges();
@@ -50,5 +56,13 @@ describe('LottoNumberDisplayComponent', () => {
   it('should not display lotto numbers', () => {
     const element = fixture.nativeElement.querySelector('ul');
     expect(element).toBeNull();
+  });
+
+  it('should emit when button is clicked', () => {
+    const button = fixture.nativeElement.querySelector('button');
+    spyOn(component.regenerate, 'emit');
+    button.click();
+    expect(component.regenerate.emit).toHaveBeenCalledTimes(1);
+    expect(component.regenerate.emit).toHaveBeenCalledWith(true);
   });
 });
