@@ -9,6 +9,8 @@ import { TexasLottoComponent } from './texas-lotto/texas-lotto.component';
 import { MegaMillionLottoComponent } from './mega-million-lotto/mega-million-lotto.component';
 import { TwoStepsLottoComponent } from './two-steps-lotto/two-steps-lotto.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LottoOptionsComponent } from './lotto-options/lotto-options.component';
+import { LottoNumberDisplayComponent } from './lotto-number-display/lotto-number-display.component';
 
 describe('Router test', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -18,8 +20,15 @@ describe('Router test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ RouterTestingModule.withRoutes(routes) ],
-      declarations: [ AppComponent, MegaMillionLottoComponent, TexasLottoComponent, TwoStepsLottoComponent, WelcomeComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      declarations: [
+        AppComponent,
+        LottoNumberDisplayComponent,
+        LottoOptionsComponent,
+        MegaMillionLottoComponent,
+        TexasLottoComponent,
+        TwoStepsLottoComponent,
+        WelcomeComponent
+      ]
     });
     fixture = TestBed.createComponent(AppComponent);
     router = TestBed.get(Router);
